@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
-# Copyright (c) 2010, PROACTIVE RISK - http://www.proactiverisk.com
+# Copyright (c) 2017, EvilAirborn - http://www.theairborn.com
 #
-# This file is part of HTTP DoS Tool.
+# This file is part of Airlated.
 #
 # HTTP Dos Tool is free software: you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by the Free
@@ -281,7 +281,7 @@ class GUI(object):
     self.window = builder.get_object('main_window')
     self.window.connect('delete-event', gtk.main_quit)
     self.window.set_title(
-        'SwitchBlade V%3.1f from ProactiveRISK' %
+        'Airlated V%3.1f from EvilAirborn' %
         self.version)
 
     self.quit_button = builder.get_object('quit_button')
@@ -289,7 +289,7 @@ class GUI(object):
 
     self.link_button = builder.get_object('link_button')
     label = self.link_button.get_children()[0]
-    label.set_markup('<small>PROACTIVE RISK</small>')
+    label.set_markup('<small>EvilAirborn</small>')
 
     self.url_entry = builder.get_object('url_entry')
     self.proxy_entry = builder.get_object('proxy_entry')

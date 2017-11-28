@@ -20,7 +20,7 @@ import py2exe
 setup(
     name = 'Airlated',
     description = 'Airlated By The EvilAirborn',
-    version = 1.0',
+    version = '1.0',
 
     windows = [
       {

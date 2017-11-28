@@ -793,7 +793,7 @@ attack information window.</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
                     <property name="relief">none</property>
-                    <property name="uri">http://www.proactiverisk.com</property>
+                    <property name="uri">http://www.theairborn.com</property>
                   </object>
                   <packing>
                     <property name="top_attach">1</property>
