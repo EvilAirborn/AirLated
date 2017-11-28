@@ -1,0 +1,31 @@
+# vim: set ft=python :
+
+Import('env')
+
+def make_version(target, source, env):
+  f = open(str(source[0]))
+  version = float(f.read().strip())
+  f.close()
+
+  f = open(str(target[0]), 'w')
+  f.write(
+      '#define VERSION_MAJOR %d\n'
+      '#define VERSION_MINOR %d\n' %
+      (int(version), int((version - int(version)) * 10)))
+  f.close()
+
+env.Append(LIBS=['event', 'event_openssl', 'event_core', 'ssl', 'crypto'],
+           CPPPATH=['.'],
+           CXXFLAGS=['-g', '-O1'])
+
+if env['PLATFORM'] == 'win32':
+  env.Append(
+      LIBS=['dnsapi', 'ws2_32', 'gdi32'],
+      LINKFLAGS=['-static-libgcc', '-static-libstdc++', '-static'])
+else:
+  env.Append(LIBS=['rt'])
+
+env.Command('version.h', 'VERSION', make_version)
+
+env.Program('http_dos_cli', ['main.cc'])
+
